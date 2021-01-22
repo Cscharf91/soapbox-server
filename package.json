@@ -10,5 +10,8 @@
     "express-validator": "^6.9.2",
     "mongoose": "^5.11.13"
   },
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
 }
