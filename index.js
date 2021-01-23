@@ -1,6 +1,7 @@
 import express from 'express';
 import wordRoutes from './routes/wordRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
+import phraseRoutes from './routes/phraseRoutes.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import 'dotenv/config.js';
@@ -18,6 +19,7 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 
 app.use('/api/words', wordRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/phrases', phraseRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
