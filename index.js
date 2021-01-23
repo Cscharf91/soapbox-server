@@ -11,9 +11,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const dbUri = process.env.DB_URI;
-const mongoDb = "mongodb+srv://cscharf91:imaChamp91@cluster0.fx1r1.mongodb.net/soapstone-dictionary?retryWrites=true&w=majority";
-mongoose.connect(mongoDb, { useUnifiedTopology: true, useNewUrlParser: true });
+const dbUri = process.env.DB_URI;
+mongoose.connect(dbUri, { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "mongo connection error"));
 
