@@ -1,4 +1,5 @@
 import Prompt from "../models/Prompt.js";
+import Soapstone from "../models/Soapstone.js";
 
 const getPrompts = async (req, res) => {
   try {
@@ -21,8 +22,10 @@ const createPrompt = async (req, res) => {
 
 const getPrompt = async (req, res) => {
   try {
-    const prompt = await Prompt.findById(req.params.id);
-    res.json(prompt);
+    const { id } = req.params;
+    const prompt = await Prompt.findById(id);
+    const soapstones = await Soapstone.find({ prompt: id });
+    res.json({ prompt, soapstones });
   } catch (error) {
     res.status(400).json({ error });
   }

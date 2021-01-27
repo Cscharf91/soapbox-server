@@ -3,6 +3,7 @@ import wordRoutes from './routes/wordRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import phraseRoutes from './routes/phraseRoutes.js';
 import promptRoutes from './routes/promptRoutes.js';
+import soapstoneRoutes from './routes/soapstoneRoutes.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import 'dotenv/config.js';
@@ -21,6 +22,7 @@ app.use('/api/words', wordRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/phrases', phraseRoutes);
 app.use('/api/prompts', promptRoutes);
+app.use('/api/soapstones', soapstoneRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
