@@ -24,7 +24,7 @@ const getPrompt = async (req, res) => {
   try {
     const { id } = req.params;
     const prompt = await Prompt.findById(id);
-    const soapstones = await Soapstone.find({ prompt: id });
+    const soapstones = await Soapstone.find({ prompt: id }).sort({ date: -1 });
     res.json({ prompt, soapstones });
   } catch (error) {
     res.status(400).json({ error });
