@@ -6,6 +6,11 @@ const SoapstoneSchema = new Schema({
     type: String,
     required: true,
   },
+  nickname: {
+    type: String,
+    min: 2,
+    required: true,
+  },
   prompt: {
     type: Schema.Types.ObjectId,
     ref: "Prompt",
